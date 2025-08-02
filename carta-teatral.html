@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta Teatral</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #3d0066, #ffffff);
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+
+    /* Cortinas */
+    .curtain {
+      position: fixed;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to bottom, #6a0dad, #3d0066);
+      z-index: 2;
+      animation: openCurtain 3s forwards;
+    }
+    .left { left: 0; }
+    .right { right: 0; }
+
+    @keyframes openCurtain {
+      to { width: 0; }
+    }
+
+    /* Carta */
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      padding: 30px;
+      background: white;
+      color: #3d0066;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      opacity: 0;
+      animation: fadeIn 4s forwards 3s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cortinas -->
+  <div class="curtain left"></div>
+  <div class="curtain right"></div>
+
+  <!-- Carta -->
+  <div class="card">
+    <h1>Estoy muy orgullosa del esfuerzo y dedicación que tuviste en Santander de Quilichao.</h1>
+    <p>Eres un gran actor y lo que estás viviendo solo es la punta de una gran carrera.</p>
+    <p>Te amo y admiro mucho.</p>
+  </div>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/09/30/audio_35d3ab1a49.mp3?filename=les-rues-de-paris-171073.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
